@@ -51,8 +51,8 @@ def parse_args():
     """Process arguments outside milc.
     """
     parser = argparse.ArgumentParser(description='CLI wrapper for running QMK commands.')
-    parser.add_argument('-H', '--home', help='Path to the qmk_firmware directory.')
-    parser.add_argument('subcommand', help='Subcommand to run')
+    parser.add_argument('-H', '--home', help='Path to the qmk_firmware directory. By default, uses the environment value QMK_HOME. If that is empty, uses $HOME/qmk_firmware.')
+    parser.add_argument('subcommand', help='Subcommand to run.')
     parser.add_argument('subcommand_args', nargs=argparse.REMAINDER, help='Arguments to pass to the subcommand.')
     args = parser.parse_args()
 
